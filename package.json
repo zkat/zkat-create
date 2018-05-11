@@ -1,7 +1,7 @@
 {
   "name": "@iarna/create",
   "description": "Init the current project using @iarna's defaults.",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "license": "ISC",
   "bin": "init.js",
   "files": [
