@@ -7,7 +7,9 @@
   "files": [
     "init.js",
     "index.js",
-    "*.md"
+    "*.md",
+    "template",
+    "!template/*~"
   ],
   "dependencies": {
     "@perl/qr": "^1.2.0",
