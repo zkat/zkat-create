@@ -1,0 +1,49 @@
+{
+  "name": "@iarna/create",
+  "description": "Init the current project using @iarna's defaults.",
+  "version": "1.0.0",
+  "license": "ISC",
+  "bin": "init.js",
+  "files": [
+    "init.js",
+    "index.js",
+    "*.md"
+  ],
+  "dependencies": {
+    "@perl/qr": "^1.2.0",
+    "@perl/qx": "^1.0.2",
+    "@perl/system": "^1.0.2",
+    "hosted-git-info": "^2.6.0"
+  },
+  "bundleDependencies": [
+    "@perl/qr",
+    "@perl/qx",
+    "@perl/system",
+    "hosted-git-info"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iarna/iarna-create.git"
+  },
+  "scripts": {
+    "release": "standard-version -s",
+    "postrelease": "npm publish && git push --follow-tags",
+    "test": "standard",
+    "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+    "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'",
+    "prerelease": "npm t"
+  },
+  "devDependencies": {
+    "standard": "*",
+    "standard-version": "*",
+    "weallbehave": "*",
+    "weallcontribute": "*"
+  },
+  "bugs": "https://github.com/iarna/iarna-create/issues",
+  "homepage": "https://npmjs.com/package/iarna-create",
+  "author": {
+    "name": "Rebecca Turner",
+    "email": "me@re-becca.org",
+    "twitter": "ReBeccaOrg"
+  }
+}
