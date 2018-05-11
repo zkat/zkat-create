@@ -49,16 +49,18 @@ module.exports = (pkg, template, defaults) => {
 
   if (pjson.license && !exists(`${pkg}/LICENSE`)) {
     let data = readFile(`${template}/LICENSE-${pjson.license}`, 'utf8')
-    let name
-    if (pjson.author) {
-      if (pjson.author.name) {
-        name = pjson.author.name
-      } else {
-        [, name] = pjson.author.match(qr`^([^<(]+)`)
-        if (name) name = name.trim().replace(/^"(.*)"$/, '$1')
+    let copyright = defaults.copyright
+    if (!copyright) {
+      if (pjson.author) {
+        if (pjson.author.name) {
+          copyright = pjson.author.name
+        } else {
+          [, copyright] = pjson.author.match(qr`^([^<(]+)`)
+          if (copyright) copyright = copyright.trim().replace(/^"(.*)"$/, '$1')
+        }
       }
     }
-    if (name) data = `Copyright ${name}\n\n${data}`
+    if (copyright) data = `Copyright ${copyright}\n\n${data}`
     writeFile(`${pkg}/LICENSE`, data)
     console.error('~:', 'created LICENSE')
   }
