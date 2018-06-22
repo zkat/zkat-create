@@ -23,7 +23,7 @@ module.exports = (pkg, template, defaults) => {
 
   if (!pjson.name) {
     const [, scope, name] = pkg.match(qr`(?:(@[^\\/]+)[\\/])?([^\\/]+)$`)
-    pjson.name = (scope ? scope + ' /' : '') + name
+    pjson.name = (scope ? scope + '/' : '') + name
     console.error('name:', pjson.name)
   }
 
