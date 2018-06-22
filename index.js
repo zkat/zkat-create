@@ -8,8 +8,12 @@ const readFile = fs.readFileSync
 const writeFile = fs.writeFileSync
 const exists = fs.existsSync
 
+const notSlash = qr`[^\\/]`
+const slash = qr`[\\/]`
+
 module.exports = (pkg, template, defaults) => {
   if (!defaults) defaults = {}
+  const namespaces = qr.join('|', defaults.namespaces || [])
   let pjson = {}
   try {
     pjson = JSON.parse(readFile(`${pkg}/package.json`))
@@ -22,7 +26,8 @@ module.exports = (pkg, template, defaults) => {
   }
 
   if (!pjson.name) {
-    const [, scope, name] = pkg.match(qr`(?:(@[^\\/]+)[\\/])?([^\\/]+)$`)
+    const [, anyScope, knownScope, name] = qr`(?:(@${notSlash}+)${slash}|(${namespaces})-)?(${notSlash}+)$`.exec(pkg)
+    let scope = anyScope || knownScope
     pjson.name = (scope ? scope + '/' : '') + name
     console.error('name:', pjson.name)
   }
