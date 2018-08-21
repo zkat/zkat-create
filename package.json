@@ -1,7 +1,7 @@
 {
-  "name": "@iarna/create",
-  "description": "Init the current project using @iarna's defaults.",
-  "version": "1.1.2",
+  "name": "@zkat/create",
+  "description": "Init the current project using @zkat's defaults.",
+  "version": "1.0.0",
   "license": "ISC",
   "bin": "init.js",
   "files": [
@@ -27,7 +27,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/iarna/iarna-create.git"
+    "url": "https://github.com/zkat/zkat-create.git"
   },
   "scripts": {
     "release": "standard-version -s",
@@ -43,8 +43,7 @@
     "weallbehave": "*",
     "weallcontribute": "*"
   },
-  "bugs": "https://github.com/iarna/iarna-create/issues",
-  "homepage": "https://npmjs.com/package/iarna-create",
+  "homepage": "https://npmjs.com/package/@zkat/create",
   "author": {
     "name": "Rebecca Turner",
     "email": "me@re-becca.org",

@@ -2,9 +2,9 @@
   "version": "1.0.0",
   "license": "ISC",
   "author": {
-    "name": "Rebecca Turner",
-    "email": "me@re-becca.org",
-    "twitter": "ReBeccaOrg"
+    "name": "Kat Marchán",
+    "email": "kzm@zkat.tech",
+    "twitter": "maybekatz"
   },
   "scripts": {
     "prerelease": "npm t",
