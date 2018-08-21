@@ -1,7 +1,7 @@
 {
   "name": "@zkat/create",
   "description": "Init the current project using @zkat's defaults.",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "license": "ISC",
   "bin": "init.js",
   "files": [
